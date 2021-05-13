@@ -25,7 +25,6 @@ p {
   margin-bottom: 0;
   padding: 0.5vw;
 }
-
 img {
   padding-right: 1rem;
 }
@@ -438,7 +437,7 @@ input[data-error]::after {
 .hero-headline {
   font-size: 6rem;
   font-weight: normal;
-  white-space: nowrap;
+  width: 65vw;
 }
 .hero-text {
   width: 146%;
@@ -479,9 +478,13 @@ footer {
   margin: 0 20px;
 }
 @media screen and (max-width: 800px) {
+  img{
+    width: 30vw;
+  }
   .hero-section {
     display: block;
     box-shadow: unset;
+    overflow: visible;
   }
   .hero-content {
     background: #fff;
@@ -495,12 +498,17 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 1.8rem;
     white-space: normal;
+    overflow: visible;
+    font-weight: bold;
+    text-align: center;
   }
   .hero-text {
-    width: unset;
-    font-size: 1.5rem;
+    width: 90vw;
+    font-size: 1rem;
+    overflow: visible;
+    margin-top: 30px;
   }
   .hero-img img {
     border-radius: 10px;
