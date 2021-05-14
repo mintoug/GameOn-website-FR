@@ -20,4 +20,15 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+// close modal
 
+const btnCloseModal = document.querySelector('.close');
+const btnOpenModal = document.querySelector('.btn-signup');
+
+btnOpenModal.addEventListener('click',()=>{
+  modalbg.style.display="block";
+});
+
+btnCloseModal.addEventListener('click',()=>{
+  modalbg.style.display="none";
+});

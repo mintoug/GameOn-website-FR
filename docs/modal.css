@@ -67,38 +67,6 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-} 
 
 main {
   font-size: 130%;
@@ -126,9 +94,7 @@ main {
   cursor: pointer;
 }
 
-.modal-btn:hover {
-  background: #3876ac;
-}
+
 
 .footer {
   margin: 20px;
@@ -138,24 +104,34 @@ main {
 
 /* Modal form */
 
-.button {
-  background: #fe142f;
-  margin-top: 0.5em;
-  padding: 1em;
-  color: #fff;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.button:hover {
-  background: #3876ac;
-}
-
 .smFont {
   font-size: 16px;
 }
-
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
 .bground {
   display: none;
   position: fixed;
@@ -295,31 +271,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
-  opacity: 1;
-  cursor: pointer;
-  transform: scale(0.7);
-}
-.close:before,
-.close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  width: 3px;
-  background-color: #fff;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
-}
+
 .btn-submit,
 .btn-signup {
   background: #fe142f;
@@ -332,6 +284,11 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+.btn-submit:hover,
+.btn-signup:hover {
+  background: #3876ac;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -398,11 +355,7 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* custom select end */
-.text-label {
-  font-weight: normal;
-  font-size: 16px;
-}
+/* landing page */
 .hero-section {
   min-height: 93vh;
   border-radius: 10px;
@@ -477,6 +430,27 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+/* the responsive */
+@media screen and (max-width: 768px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 @media screen and (max-width: 800px) {
   img{
     width: 30vw;
@@ -524,6 +498,15 @@ footer {
     text-align: center;
   }
 }
+ @media screen and (max-width: 540px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+} 
+
 
 @keyframes modalopen {
   from {
