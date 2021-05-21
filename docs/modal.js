@@ -32,3 +32,21 @@ btnOpenModal.addEventListener('click',()=>{
 btnCloseModal.addEventListener('click',()=>{
   modalbg.style.display="none";
 });
+
+
+ //launch and close confirm-modal
+const closeConfirm=document.querySelector('.close-confirm');
+const openConfirm=document.querySelector('.open-confirm');
+const confirmModal=document.querySelector('.confirm-modal');
+
+function launchConfirmModal(){
+
+  openConfirm.addEventListener('click',()=>{
+   
+    confirmModal.style.display="block";
+  });
+  
+  closeConfirm.addEventListener('click',()=>{
+    confirmModal.style.display="none";
+  });
+  }
