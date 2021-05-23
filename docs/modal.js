@@ -39,6 +39,7 @@ function launchConfirmModal(){
 function closeConfirmModal(){
   closeConfirm.addEventListener('click',()=>{
     confirmModal.style.display="none";
+    modalbg.style.display="none";
   })
 }
 //the value of inputs
@@ -50,59 +51,96 @@ let quantity=document.getElementById('quantity');
 let condition=document.getElementById('checkbox1');
 let local=document.querySelectorAll(".checkbox-input");
 let formData=document.querySelector('.formData');
-
+let birthInput=Date.parse(birthDate.value)
  //check input by regex
  const nameValid=/^[A-Za-z]{1,}$/;
- const emailValid=/^[A-Za-z0-9-_.]{1,}\.[a-z]{2,}$/;
- const number=/^[0-9]{1,}$/;
+ const emailValid=/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
+ const number=/^[0-9]+$/;
 
+//ckeck birthday (age between 15 and 120 years)
+const dateNow= Date.now();
+const oneYear=31557600000; //second per one year
+const maxDate= currentDate -(oneYear * 120);
+const minDate=currentDate +(oneYear * 15);
  
 //check input values
 function checkFirst(){
   let isValid= first.value.length<2 || !nameValid.test(first.value);
   first.parentNode.setAttribute("data-error-visible",String(isValid));
-  return isValid
+  return !isValid
 }
-checkFirst(first);  //test function  
 
 function checkLast(){
   let isValid= last.value.length<2 || !nameValid.test(last.value);
   last.parentNode.setAttribute("data-error-visible", String(isValid));
-  return isValid
+  return !isValid
 }
  
 function checkEmail(){
   let isValid = email.value.length<2 || !emailValid.test(email.value);
   email.parentNode.setAttribute("data-error-visible", String(isValid));
-  return isValid
+  return !isValid
 }
 function checkBirthDate(){
-  let isValid= !birthDate.value
+  let isValid= !birthDate.value 
   birthDate.parentNode.setAttribute("data-error-visible", String(isValid));
-  return isValid
+  return !isValid
 }
 function checkNumber(){
-  let isValid= !number.test(quantity)
+  let isValid= !number.test(quantity.value)
   quantity.parentNode.setAttribute("data-error-visible", String(isValid));
-  return isValid
+  return !isValid
 }
 
 // check if one of inputsradio is checked
 function checkLocal(){
   let check=0;
   local.forEach(el => check += el.checked ? 1:0);
-  const isValid =check ==0
+  let isValid =check ==0
   local[0].parentNode.setAttribute('data-error-visible', String(isValid))
-  return isValid
+  return !isValid
 }
 
 //check conditions
 function ckeckConditions(){
-  const isValid=!condition.checked;
+  let isValid= !condition.checked;
   condition.parentNode.setAttribute('data-error-visible', String(isValid))
-  return isValid
+  return !isValid
 }
 
-// var checkInputFields=[checkFirst(), checkLast(), checkEmail(), checkBirthDate(), checkNumber(), checkLocal(), checkLocal(), ckeckConditions()]
+//  var checkInputFields=[checkFirst(), checkLast(), checkEmail(), checkBirthDate(), checkNumber(), checkLocal(), ckeckConditions()]
 
 // 
+function validate(){
+  
+  event.preventDefault();
+  let isValid= true
+  if(!checkFirst()){
+    isValid=false;
+  }
+  if(!checkLast()){
+    isValid=false;
+  }
+  if(!checkEmail()){
+    isValid=false;
+  }
+  if(!checkBirthDate()){
+    isValid=false;
+  }
+  if(!checkNumber()){
+    isValid=false;
+  }
+  if(!checkLocal()){
+    isValid=false;
+  }
+  if(!ckeckConditions()){
+    isValid=false;
+  }
+if(isValid){
+
+  launchConfirmModal()
+  closeConfirmModal()
+
+
+ }
+}
