@@ -485,9 +485,7 @@ footer {
   }
 }
 @media screen and (max-width: 800px) {
-  img{
-    width: 30vw;
-  }
+
   .hero-section {
     display: block;
     box-shadow: unset;
