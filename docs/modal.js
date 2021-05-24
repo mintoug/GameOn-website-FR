@@ -51,17 +51,15 @@ let quantity=document.getElementById('quantity');
 let condition=document.getElementById('checkbox1');
 let local=document.querySelectorAll(".checkbox-input");
 let formData=document.querySelector('.formData');
-let birthInput=Date.parse(birthDate.value)
+
+
  //check input by regex
  const nameValid=/^[A-Za-z]{1,}$/;
  const emailValid=/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
  const number=/^[0-9]+$/;
 
-//ckeck birthday (age between 15 and 120 years)
-const dateNow= Date.now();
-const oneYear=31557600000; //second per one year
-const maxDate= currentDate -(oneYear * 120);
-const minDate=currentDate +(oneYear * 15);
+
+
  
 //check input values
 function checkFirst(){
@@ -94,9 +92,9 @@ function checkNumber(){
 
 // check if one of inputsradio is checked
 function checkLocal(){
-  let check=0;
+  let check = 0;
   local.forEach(el => check += el.checked ? 1:0);
-  let isValid =check ==0
+  let isValid = check == 0
   local[0].parentNode.setAttribute('data-error-visible', String(isValid))
   return !isValid
 }
