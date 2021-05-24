@@ -13,7 +13,7 @@
 <body>
   <div class="topnav" id="myTopnav">
     <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      <img alt="logo" src="Logo.png" />
     </div>
     <div class="main-navbar">
 
@@ -27,14 +27,12 @@
       </a>
     </div>
   </div>
-  </div>
-
   <main>
     <!-- page d'acceuil -->
     <div class="hero-section">
       <div class="hero-content">
         <h1 class="hero-headline">
-          Marathon national</br> de jeux vidéos
+          Marathon national de jeux vidéos
         </h1>
         <p class="hero-text">
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
@@ -61,10 +59,10 @@
           <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
             <div class="formData" data-error="entrez votre prénom à 2 caractètres minimum">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first"/>
+              <input class="text-control" type="text" id="first" name="first" />
               <br>
             </div>
-            <div class="formData"data-error="entrez votre nom à 2 caractètres minimum" >
+            <div class="formData" bdata-error="entrez votre nom à 2 caractètres minimum">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" />
               <br>
@@ -74,15 +72,15 @@
               <input class="text-control" type="text" id="email" name="email" />
               <br>
             </div>
-            <div class="formData" data-error="entrez votre date de naissance" >
+            <div class="formData" data-error="entrez votre date de naissance">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" />
               <br>
             </div>
             <div class="formData" data-error="entrez le nombre de tournois">
-              <label for="quantify">À combien de tournois GameOn avez-vous déjà participé ?</label>
+              <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
               <br>
-              <input type="text" class="text-control" id="quantity" name="quantity" >
+              <input type="text" class="text-control" id="quantity" name="quantity">
             </div>
             <p class="text-label">Quelles villes ?</p>
             <div class="formData" data-error="Choisir au moins une ville">
@@ -133,7 +131,7 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit open-confirm" type="submit" class="button" value="C'est parti" />
+            <input class="btn-submit open-confirm button" type="submit" value="C'est parti" />
           </form>
         </div>
       </div>
@@ -141,9 +139,9 @@
   </main>
 
   <div class="confirm-modal">
-    
+
     <p>Félicitation! votre participation a été envoyé.</p>
-    <input class="btn-submit close-confirm" type="submit" class="button" value="fermer" />
+    <input class="btn-submit close-confirm button" type="submit" value="fermer" />
 
   </div>
 
