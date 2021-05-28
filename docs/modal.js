@@ -2,7 +2,6 @@
 const modalbg         = document.querySelector(".bground");
 const modalBtn        = document.querySelectorAll(".modal-btn");
 const closeModalIcon  = document.querySelector(".close");
-const btnSignUp       = document.querySelector(".btn-signup");
 const btnSubmitForm   = document.querySelector('.open-confirm');
 const confirmModal    = document.querySelector('.confirm-modal');
 const closeConfirm    = document.querySelector('.close-confirm');
@@ -36,7 +35,7 @@ function editNav() {
 
 
 // launch modal form
-btnSignUp.addEventListener('click', launchModal);
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 function launchModal() {
   modalbg.style.display = "block";
