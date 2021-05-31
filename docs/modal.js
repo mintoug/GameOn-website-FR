@@ -10,6 +10,7 @@ const closeConfirm    = document.querySelector('.close-confirm');
 let first             = document.getElementById('first');
 let last              = document.getElementById('last');
 let email             = document.getElementById('email');
+let telephone         = document.getElementById('tel');
 let birthDate         = document.getElementById('birthdate');
 let quantity          = document.getElementById('quantity');
 let condition         = document.getElementById('checkbox1');
@@ -20,7 +21,7 @@ let formData          = document.querySelector('.formData');
 const nameValid       = /^[A-Za-z]{1,}$/;
 const emailValid      = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
 const number          = /^[0-9]+$/;
-
+const numberTel       = /^((\+)33|0)[1-9](\d{2}){4}$/;
 
 // responsive nav bar
 function editNav() {
@@ -75,8 +76,13 @@ function checkLast() {
 }
  
 function checkEmail() {
-  let isValid = email.value.length<2 || !emailValid.test(email.value);
+  let isValid = email.value.length<1 || !emailValid.test(email.value);
   email.parentNode.setAttribute("data-error-visible" , String(isValid));
+  return !isValid;
+}
+function checkPhone() {
+  let isValid = telephone.value.length<1 || !numberTel.test(telephone.value);
+  telephone.parentNode.setAttribute("data-error-visible" , String(isValid));
   return !isValid;
 }
 function checkBirthDate() {
@@ -118,6 +124,9 @@ function validate() {
     isValid = false;
   }
   if(!checkEmail()) {
+    isValid = false;
+  }
+  if(!checkPhone()) {
     isValid = false;
   }
   if(!checkBirthDate()) {
