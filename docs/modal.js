@@ -144,6 +144,7 @@ function validate() {
 
 if(isValid) {
   launchConfirmModal()
+  closeModal()
   closeConfirmModal()
  }
 }
